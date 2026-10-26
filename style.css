@@ -1,0 +1,156 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+overflow-x:hidden;
+overflow-y:auto;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(to bottom,#08142d,#10274f,#183b72);
+padding:30px;
+color:white;
+}
+
+#stars{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:0;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+#moon{
+position:fixed;
+top:60px;
+right:80px;
+width:120px;
+height:120px;
+border-radius:50%;
+background:#fff8d6;
+box-shadow:
+0 0 40px #fff8d6,
+0 0 80px #fff6aa;
+z-index:1;
+}
+
+.container{
+position:relative;
+z-index:2;
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.envelope{
+width:390px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(14px);
+padding:40px;
+border-radius:25px;
+text-align:center;
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+animation:float 4s ease-in-out infinite;
+}
+
+.emoji{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.envelope h1{
+font-size:34px;
+margin-bottom:15px;
+}
+
+.envelope p{
+line-height:1.8;
+opacity:.9;
+margin-bottom:25px;
+}
+
+button{
+padding:15px 35px;
+font-size:16px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+background:white;
+color:#17396f;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.letter{
+display:none;
+width:95%;
+max-width:850px;
+background:white;
+color:#222;
+padding:45px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+animation:fade .8s;
+}
+
+.letter h2{
+text-align:center;
+margin-bottom:25px;
+color:#17396f;
+}
+
+#typing{
+line-height:2;
+font-size:18px;
+white-space:pre-line;
+min-height:350px;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes twinkle{
+from{
+opacity:.2;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1.3);
+}
+}
